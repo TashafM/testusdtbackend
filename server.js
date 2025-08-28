@@ -28,6 +28,11 @@ app.use("/secure", adminRoutes);
 
 // Start
 const PORT = process.env.PORT || 5000;
+
+app.get("/", (req, res) => {
+  res.send("Server started successfully!");
+});
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
