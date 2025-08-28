@@ -33,6 +33,9 @@ app.get("/", (req, res) => {
   res.send("Server started successfully!");
 });
 
+console.log("🔹 Railway ENV MONGO_URI:", process.env.MONGO_URI || "NOT FOUND");
+
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
